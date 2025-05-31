@@ -21,118 +21,151 @@
       color: var(--texto);
       position: relative;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
     .background-shapes {
-      position: absolute;
+      position: fixed;
       top: 0;
-      right: 0;
-      width: 100%;
-      height: 250px;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none; /* Para que no interfiera con clicks */
       overflow: visible;
       z-index: -1;
     }
 
-    /* Triángulos existentes */
+    /* Triángulos */
     .triangle {
       position: absolute;
       width: 0;
       height: 0;
-      opacity: 0.9;
+      opacity: 0.15;
     }
 
     .triangle1 {
-      top: 0;
-      right: 0;
-      border-left: 100px solid transparent;
-      border-bottom: 100px solid #4db6ac;
+      top: 10vh;
+      left: 5vw;
+      border-left: 120px solid transparent;
+      border-bottom: 120px solid #4db6ac;
     }
 
     .triangle2 {
-      top: 20px;
-      right: 100px;
-      border-left: 80px solid transparent;
-      border-bottom: 80px solid #26a69a;
+      top: 60vh;
+      right: 10vw;
+      border-left: 100px solid transparent;
+      border-bottom: 100px solid #26a69a;
     }
 
     .triangle3 {
-      top: 60px;
-      right: 50px;
-      border-left: 60px solid transparent;
-      border-bottom: 60px solid #80cbc4;
+      top: 30vh;
+      left: 60vw;
+      border-left: 80px solid transparent;
+      border-bottom: 80px solid #80cbc4;
     }
 
     .triangle4 {
-      top: 10px;
-      right: 160px;
-      border-left: 60px solid transparent;
-      border-bottom: 60px solid #b2dfdb;
+      top: 75vh;
+      left: 25vw;
+      border-left: 70px solid transparent;
+      border-bottom: 70px solid #b2dfdb;
     }
 
-    /* Nuevas formas geométricas */
-
-    /* Triángulos adicionales */
     .triangle5 {
-      top: 100px;
-      right: 200px;
-      border-left: 40px solid transparent;
-      border-bottom: 40px solid #a7cdbd;
-      opacity: 0.7;
+      top: 50vh;
+      left: 40vw;
+      border-left: 90px solid transparent;
+      border-bottom: 90px solid #a7cdbd;
     }
+
     .triangle6 {
-      top: 150px;
-      right: 20px;
-      border-left: 50px solid transparent;
-      border-bottom: 50px solid #8fbcb3;
-      opacity: 0.6;
+      top: 85vh;
+      right: 30vw;
+      border-left: 60px solid transparent;
+      border-bottom: 60px solid #8fbcb3;
     }
 
     /* Círculos */
-    .circle1 {
+    .circle {
       position: absolute;
-      top: 40px;
-      right: 220px;
-      width: 70px;
-      height: 70px;
-      background-color: #4db6ac;
       border-radius: 50%;
-      opacity: 0.25;
+      opacity: 0.1;
+    }
+
+    .circle1 {
+      top: 15vh;
+      left: 80vw;
+      width: 90px;
+      height: 90px;
+      background-color: #4db6ac;
     }
 
     .circle2 {
-      position: absolute;
-      top: 120px;
-      right: 130px;
-      width: 40px;
-      height: 40px;
+      top: 40vh;
+      left: 10vw;
+      width: 60px;
+      height: 60px;
       background-color: #80cbc4;
-      border-radius: 50%;
-      opacity: 0.3;
+    }
+
+    .circle3 {
+      top: 70vh;
+      left: 85vw;
+      width: 50px;
+      height: 50px;
+      background-color: #26a69a;
+    }
+
+    .circle4 {
+      top: 80vh;
+      left: 55vw;
+      width: 70px;
+      height: 70px;
+      background-color: #b2dfdb;
     }
 
     /* Rectángulos */
-    .rect1 {
+    .rect {
       position: absolute;
-      top: 30px;
-      right: 300px;
-      width: 100px;
+      opacity: 0.1;
+      border-radius: 8px;
+      transform-origin: center;
+    }
+
+    .rect1 {
+      top: 20vh;
+      left: 40vw;
+      width: 120px;
       height: 15px;
       background-color: #26a69a;
-      opacity: 0.2;
-      border-radius: 8px;
-      transform: rotate(15deg);
+      transform: rotate(20deg);
     }
 
     .rect2 {
-      position: absolute;
-      top: 90px;
-      right: 280px;
-      width: 60px;
-      height: 10px;
+      top: 65vh;
+      left: 15vw;
+      width: 90px;
+      height: 12px;
       background-color: #b2dfdb;
-      opacity: 0.25;
-      border-radius: 6px;
-      transform: rotate(-10deg);
+      transform: rotate(-25deg);
+    }
+
+    .rect3 {
+      top: 45vh;
+      right: 15vw;
+      width: 100px;
+      height: 10px;
+      background-color: #4db6ac;
+      transform: rotate(10deg);
+    }
+
+    .rect4 {
+      top: 85vh;
+      left: 70vw;
+      width: 80px;
+      height: 14px;
+      background-color: #80cbc4;
+      transform: rotate(-15deg);
     }
 
     .container {
@@ -140,6 +173,7 @@
       margin: auto;
       padding: 30px;
       position: relative;
+      z-index: 1;
     }
 
     header {
@@ -195,14 +229,18 @@
     <div class="triangle triangle2"></div>
     <div class="triangle triangle3"></div>
     <div class="triangle triangle4"></div>
-
-    <!-- Nuevas formas -->
     <div class="triangle triangle5"></div>
     <div class="triangle triangle6"></div>
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-    <div class="rect1"></div>
-    <div class="rect2"></div>
+
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+
+    <div class="rect rect1"></div>
+    <div class="rect rect2"></div>
+    <div class="rect rect3"></div>
+    <div class="rect rect4"></div>
   </div>
 
   <div class="container">
