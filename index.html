@@ -11,82 +11,68 @@
       --acento: #d6cfc4;
       --texto: #3a3a3a;
       --suave: #eae6df;
-      --verde-oscuro: #2a9d8f;
-      --verde-claro: #67b5ac;
     }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--fondo);
       margin: 0;
       padding: 0;
+      background-color: var(--fondo);
       color: var(--texto);
       position: relative;
+      overflow-x: hidden;
     }
 
-    /* Fondo decorativo geométrico */
-    .decoracion-superior {
+    .background-shapes {
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
-      height: 180px;
+      height: 250px;
       overflow: hidden;
       z-index: -1;
     }
 
-    .triangulo {
+    .triangle {
       position: absolute;
-      width: 120px;
-      height: 120px;
-      background: var(--verde-oscuro);
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 0;
+      height: 0;
       opacity: 0.9;
     }
 
-    .triangulo:nth-child(1) {
+    .triangle1 {
+      top: 0;
+      right: 0;
+      border-left: 100px solid transparent;
+      border-bottom: 100px solid #4db6ac;
+    }
+
+    .triangle2 {
       top: 20px;
-      right: 20px;
-      transform: rotate(10deg);
-      background: var(--verde-oscuro);
-    }
-
-    .triangulo:nth-child(2) {
-      top: 60px;
       right: 100px;
-      transform: rotate(-20deg);
-      background: var(--verde-claro);
+      border-left: 80px solid transparent;
+      border-bottom: 80px solid #26a69a;
     }
 
-    .triangulo:nth-child(3) {
+    .triangle3 {
+      top: 60px;
+      right: 50px;
+      border-left: 60px solid transparent;
+      border-bottom: 60px solid #80cbc4;
+    }
+
+    .triangle4 {
       top: 10px;
-      right: 180px;
-      transform: rotate(15deg);
-      background: var(--verde-oscuro);
-    }
-
-    .triangulo:nth-child(4) {
-      top: 50px;
-      right: 250px;
-      transform: rotate(25deg);
-      background: var(--verde-claro);
-    }
-
-    .decoracion-inferior {
-      width: 100%;
-      height: 20px;
-      background-color: var(--verde-oscuro);
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
+      right: 160px;
+      border-left: 60px solid transparent;
+      border-bottom: 60px solid #b2dfdb;
     }
 
     .container {
       max-width: 900px;
       margin: auto;
       padding: 30px;
-      padding-bottom: 50px;
+      position: relative;
     }
 
     header {
@@ -137,16 +123,12 @@
 </head>
 <body>
 
-  <!-- Fondo decorativo superior -->
-  <div class="decoracion-superior">
-    <div class="triangulo"></div>
-    <div class="triangulo"></div>
-    <div class="triangulo"></div>
-    <div class="triangulo"></div>
+  <div class="background-shapes">
+    <div class="triangle triangle1"></div>
+    <div class="triangle triangle2"></div>
+    <div class="triangle triangle3"></div>
+    <div class="triangle triangle4"></div>
   </div>
-
-  <!-- Fondo decorativo inferior -->
-  <div class="decoracion-inferior"></div>
 
   <div class="container">
     <header>
