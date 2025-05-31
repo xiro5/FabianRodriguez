@@ -17,7 +17,7 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #f9f7f1 0%, #e0e6e2 100%);
+      background-color: var(--fondo);
       color: var(--texto);
       position: relative;
       overflow-x: hidden;
@@ -33,6 +33,7 @@
       z-index: -1;
     }
 
+    /* Triángulos existentes */
     .triangle {
       position: absolute;
       width: 0;
@@ -68,46 +69,70 @@
       border-bottom: 60px solid #b2dfdb;
     }
 
-    /* Nuevas burbujas animadas */
-    .bubble {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(77, 182, 172, 0.15);
-      animation: float 6s ease-in-out infinite;
-      filter: blur(2px);
-    }
+    /* Nuevas formas geométricas */
 
-    .bubble1 {
-      width: 80px;
-      height: 80px;
-      top: 30px;
-      right: 150px;
-      animation-delay: 0s;
-    }
-    .bubble2 {
-      width: 60px;
-      height: 60px;
+    /* Triángulos adicionales */
+    .triangle5 {
       top: 100px;
-      right: 250px;
-      animation-delay: 2s;
+      right: 200px;
+      border-left: 40px solid transparent;
+      border-bottom: 40px solid #a7cdbd;
+      opacity: 0.7;
     }
-    .bubble3 {
-      width: 100px;
-      height: 100px;
+    .triangle6 {
       top: 150px;
-      right: 80px;
-      animation-delay: 4s;
+      right: 20px;
+      border-left: 50px solid transparent;
+      border-bottom: 50px solid #8fbcb3;
+      opacity: 0.6;
     }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-        opacity: 0.15;
-      }
-      50% {
-        transform: translateY(-15px);
-        opacity: 0.3;
-      }
+    /* Círculos */
+    .circle1 {
+      position: absolute;
+      top: 40px;
+      right: 220px;
+      width: 70px;
+      height: 70px;
+      background-color: #4db6ac;
+      border-radius: 50%;
+      opacity: 0.25;
+    }
+
+    .circle2 {
+      position: absolute;
+      top: 120px;
+      right: 130px;
+      width: 40px;
+      height: 40px;
+      background-color: #80cbc4;
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+
+    /* Rectángulos */
+    .rect1 {
+      position: absolute;
+      top: 30px;
+      right: 300px;
+      width: 100px;
+      height: 15px;
+      background-color: #26a69a;
+      opacity: 0.2;
+      border-radius: 8px;
+      transform: rotate(15deg);
+    }
+
+    .rect2 {
+      position: absolute;
+      top: 90px;
+      right: 280px;
+      width: 60px;
+      height: 10px;
+      background-color: #b2dfdb;
+      opacity: 0.25;
+      border-radius: 6px;
+      transform: rotate(-10deg);
     }
 
     .container {
@@ -170,9 +195,14 @@
     <div class="triangle triangle2"></div>
     <div class="triangle triangle3"></div>
     <div class="triangle triangle4"></div>
-    <div class="bubble bubble1"></div>
-    <div class="bubble bubble2"></div>
-    <div class="bubble bubble3"></div>
+
+    <!-- Nuevas formas -->
+    <div class="triangle triangle5"></div>
+    <div class="triangle triangle6"></div>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="rect1"></div>
+    <div class="rect2"></div>
   </div>
 
   <div class="container">
