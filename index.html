@@ -17,7 +17,7 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--fondo);
+      background: linear-gradient(135deg, #f9f7f1 0%, #e0e6e2 100%);
       color: var(--texto);
       position: relative;
       overflow-x: hidden;
@@ -29,7 +29,7 @@
       right: 0;
       width: 100%;
       height: 250px;
-      overflow: hidden;
+      overflow: visible;
       z-index: -1;
     }
 
@@ -66,6 +66,48 @@
       right: 160px;
       border-left: 60px solid transparent;
       border-bottom: 60px solid #b2dfdb;
+    }
+
+    /* Nuevas burbujas animadas */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(77, 182, 172, 0.15);
+      animation: float 6s ease-in-out infinite;
+      filter: blur(2px);
+    }
+
+    .bubble1 {
+      width: 80px;
+      height: 80px;
+      top: 30px;
+      right: 150px;
+      animation-delay: 0s;
+    }
+    .bubble2 {
+      width: 60px;
+      height: 60px;
+      top: 100px;
+      right: 250px;
+      animation-delay: 2s;
+    }
+    .bubble3 {
+      width: 100px;
+      height: 100px;
+      top: 150px;
+      right: 80px;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: 0.15;
+      }
+      50% {
+        transform: translateY(-15px);
+        opacity: 0.3;
+      }
     }
 
     .container {
@@ -128,6 +170,9 @@
     <div class="triangle triangle2"></div>
     <div class="triangle triangle3"></div>
     <div class="triangle triangle4"></div>
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
   </div>
 
   <div class="container">
