@@ -15,20 +15,64 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--fondo);
-      background-image: url("ccc.png");
-      background-repeat: no-repeat;
-      background-position: top right;
-      background-size: 250px;
       margin: 0;
       padding: 0;
+      background-color: var(--fondo);
       color: var(--texto);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .background-shapes {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0.9;
+    }
+
+    .triangle1 {
+      top: 0;
+      right: 0;
+      border-left: 100px solid transparent;
+      border-bottom: 100px solid #4db6ac;
+    }
+
+    .triangle2 {
+      top: 20px;
+      right: 100px;
+      border-left: 80px solid transparent;
+      border-bottom: 80px solid #26a69a;
+    }
+
+    .triangle3 {
+      top: 60px;
+      right: 50px;
+      border-left: 60px solid transparent;
+      border-bottom: 60px solid #80cbc4;
+    }
+
+    .triangle4 {
+      top: 10px;
+      right: 160px;
+      border-left: 60px solid transparent;
+      border-bottom: 60px solid #b2dfdb;
     }
 
     .container {
       max-width: 900px;
       margin: auto;
       padding: 30px;
+      position: relative;
     }
 
     header {
@@ -78,6 +122,14 @@
   </style>
 </head>
 <body>
+
+  <div class="background-shapes">
+    <div class="triangle triangle1"></div>
+    <div class="triangle triangle2"></div>
+    <div class="triangle triangle3"></div>
+    <div class="triangle triangle4"></div>
+  </div>
+
   <div class="container">
     <header>
       <h1>Fabian Rodriguez</h1>
